@@ -15,4 +15,3 @@ cliente2 = Cliente("Maria", "987.654.321-00",
 cliente1.comprar_ingresso(sessao1, 2)
 cliente2.comprar_ingresso(sessao1, 3)
 cliente2.comprar_ingresso
-cliente2.comprar_ingresso
