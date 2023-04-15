@@ -1,0 +1,48 @@
+@startuml N1
+
+class Pessoa{
+    -id int
+    -nome string
+    -sobrenome string
+    -rg int
+    +construct(id, nome, sobrenome, rg)
+    +comprar(ingresso)
+}
+
+class Sala {
+    -id int
+    -n_sala int
+    -filme Filme
+    +construct(id, n_sala, filme)
+
+}
+
+class Filme {
+
+    -id Int
+    -nome_filme string
+    -genero string
+    -duracao int
+    -idade int
+    -sala Sala
+    +construct(id, nome_filme, genero, duracao, idade, sala)
+
+}
+
+class Ingresso {
+
+    -id int
+    -horario int
+    -filme string
+    -sala int
+    -lugar string
+    -pessoa Pessoa
+    -filme Filme
+    +construct(id, horario, filme, sala, lugar, pessoa, filme)
+}
+
+Ingresso --> Pessoa
+Ingresso --> Filme
+Filme --> Sala
+
+@enduml
