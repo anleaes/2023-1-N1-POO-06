@@ -42,7 +42,8 @@ while True:
 
     if opcao == "1":
         listar_sessoes(sessoes_disponiveis)
-    elif opcao == "2":
+        
+    if opcao == "2":
         # Seleciona a sessão desejada pelo usuário
         listar_sessoes(sessoes_disponiveis)
         sessao_opcao = int(input("Selecione a sessão desejada: ")) - 1
@@ -59,9 +60,9 @@ while True:
 
             # Realiza a compra de ingressos pelo cliente selecionado
             comprar_ingressos(sessao_selecionada, cliente_selecionado)
+        
     if opcao == "3":
         print("Obrigado por utilizar nosso sistema de venda de ingressos. Volte sempre!")
         break
-    else:
-        print("Opção inválida. Tente novamente.")
+    
     
