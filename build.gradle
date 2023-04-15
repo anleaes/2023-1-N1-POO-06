@@ -1,0 +1,6 @@
+repositories {
+    maven { url 'https://github.com/anleaes/2023-1-N1-POO-06' }
+}
+dependencies {
+    implementation 'com.exemplo:nomedaclasse:versao'
+}
