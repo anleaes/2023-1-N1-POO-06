@@ -35,3 +35,4 @@ print("Título: ", filme1.nome)
 print("Duração: ", filme1.duracao)
 print("Gênero: ", filme1.genero)
 print("Classificação indicativa: ", filme1.classificacao)
+
