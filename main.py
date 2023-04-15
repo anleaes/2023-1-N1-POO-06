@@ -1,4 +1,4 @@
-from cliente import Cliente
+from cliente import *
 from filme import Filme
 from sessao import Sessao
 
