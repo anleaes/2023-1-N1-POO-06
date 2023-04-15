@@ -1,6 +1,7 @@
 from cliente import Cliente
 from filme import Filme
 from sessao import Sessao
+from typing import List
 
 # Criando os objetos Filme
 filme1 = Filme("O Poderoso Chefão", "2h 58min", "Drama", "16 anos")
@@ -36,9 +37,36 @@ cliente10 = Cliente("Julia", "326.237.743-23", "(51) 99375-0093", 430.50, "3547 
 cliente1.comprar_ingresso(sessao1, 2)
 cliente2.comprar_ingresso(sessao1, 3)
 
-# Assuming you have a Filme object called 'filme1'
-print("Título: ", filme1.nome)
-print("Duração: ", filme1.duracao)
-print("Gênero: ", filme1.genero)
-print("Classificação indicativa: ", filme1.classificacao)
+# # Assuming you have a Filme object called 'filme1'
+# print("Título: ", filme1.nome)
+# print("Duração: ", filme1.duracao)
+# print("Gênero: ", filme1.genero)
+# print("Classificação indicativa: ", filme1.classificacao)
+
+
+##########################################################################
+sessoes_disponiveis = [sessao1, sessao2, sessao3, sessao4, sessao5, sessao6, sessao7, sessao8, sessao9, sessao10]
+
+# Função para mostrar as sessões disponíveis
+def mostrar_sessoes(sessoes: List[Sessao]):
+    print("Sessões disponíveis:")
+    for i, sessao in enumerate(sessoes):
+        print(f"{i+1}. {sessao.filme.nome} - {sessao.horario}")
+    print()
+
+# Loop principal do menu
+while True:
+    print("Bem-vindo ao cinema!\n")
+    print("Escolha uma opção:")
+    print("1. Ver sessões disponíveis")
+    print("0. Sair\n")
+    
+    opcao = input("Opção escolhida: ")
+    
+    if opcao == "1":
+        mostrar_sessoes(sessoes_disponiveis)
+    elif opcao == "0":
+        break
+    else:
+        print("Opção inválida. Tente novamente.\n")
 
