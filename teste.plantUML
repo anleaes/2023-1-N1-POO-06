@@ -1,4 +1,4 @@
-@startuml
+@startuml N1
 
 class Cliente {
     -nome: str
