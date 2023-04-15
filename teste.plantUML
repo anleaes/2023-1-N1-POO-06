@@ -1,0 +1,35 @@
+class Pessoa {
+    -nome: str
+    -cpf: str
+    -telefone: str
+}
+
+class Cliente {
+    -saldo: float
+    +depositar_saldo(valor: float): None
+    +comprar_ingresso(sessao: Sessao, qtd_ingressos: int): None
+}
+
+class Funcionario {
+    -cargo: str
+    +registrar_filme(nome: str, duracao: str, genero: str): Filme
+    +criar_sessao(filme: Filme, horario: str, preco: float): Sessao
+}
+
+class Filme {
+    -nome: str
+    -duracao: str
+    -genero: str
+}
+
+class Sessao {
+    -filme: Filme
+    -horario: str
+    -preco: float
+    -ingressos_disponiveis: int
+    +vender_ingressos(qtd: int): None
+}
+
+Pessoa <|-- Cliente
+Pessoa <|-- Funcionario
+Sessao --> Filme
