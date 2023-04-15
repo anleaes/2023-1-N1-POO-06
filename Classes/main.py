@@ -2,7 +2,7 @@ from cliente import Cliente
 from filme import Filme
 from sessao import Sessao
 
-filme = Filme("O Poderoso Chefão", "2h 58min", "Drama", "16 anos")
+filme1 = Filme("O Poderoso Chefão", "2h 58min", "Drama", "16 anos")
 
 sessao1 = Sessao(filme, "18h", 20.0, 100, 0, [])
 sessao2 = Sessao(filme, "21h", 25.0, 50, 0, [])
