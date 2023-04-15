@@ -29,3 +29,9 @@ cliente2 = Cliente("Maria", "987.654.321-00",
 
 cliente1.comprar_ingresso(sessao1, 2)
 cliente2.comprar_ingresso(sessao1, 3)
+
+# Assuming you have a Filme object called 'filme1'
+print("Título: ", filme1.nome)
+print("Duração: ", filme1.duracao)
+print("Gênero: ", filme1.genero)
+print("Classificação indicativa: ", filme1.classificacao)
