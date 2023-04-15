@@ -1,3 +1,4 @@
+@startuml
 class Pessoa {
     -nome: str
     -cpf: str
@@ -28,8 +29,12 @@ class Sessao {
     -preco: float
     -ingressos_disponiveis: int
     +vender_ingressos(qtd: int): None
+    +adicionar_cliente(cliente: Cliente): None
 }
 
 Pessoa <|-- Cliente
 Pessoa <|-- Funcionario
 Sessao --> Filme
+Sessao --> Cliente
+
+@enduml
