@@ -6,16 +6,17 @@ class Cliente:
         self.saldo = saldo
         self.cartao_credito = cartao_credito
         self.idade = idade
-        
-    def depositar_saldo(self, valor: float) -> None:
+
+    def depositar_saldo(self, valor: float):
         self.saldo += valor
-        
-    def comprar_ingresso(self, sessao: Sessao, qtd_ingressos: int) -> None:
-        if sessao.ingressos_disponiveis >= qtd_ingressos and self.saldo >= sessao.preco * qtd_ingressos:
-            sessao.vender_ingressos(qtd_ingressos)
-            self.saldo -= sessao.preco * qtd_ingressos
-            sessao.adicionar_cliente(self)
-            print(f"Ingresso(s) comprado(s) com sucesso para a sessão do filme {sessao.filme.nome}.")
+
+    def comprar_ingresso(self, sessao, qtd_ingressos):
+        valor_total = sessao.preco * qtd_ingressos
+        if valor_total > self.saldo:
+            print("Saldo insuficiente para realizar a compra")
+        elif qtd_ingressos > sessao.ingressos_disponiveis:
+            print("Não há ingressos disponíveis suficientes para realizar a compra")
         else:
-            print("Não foi possível comprar o(s) ingresso(s). Saldo insuficiente ou ingressos esgotados.")
-            
+            sessao.vender_ingressos(qtd_ingressos)
+            self.saldo -= valor_total
+            sessao.adicionar_cliente(self)
