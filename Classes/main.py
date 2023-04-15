@@ -2,10 +2,10 @@ from cliente import Cliente
 from filme import Filme
 from sessao import Sessao
 
-filme = Filme("O Poderoso Chefão", "2h 58min", "Drama", "16 anos")
+filme1 = Filme("O Poderoso Chefão", "2h 58min", "Drama", "16 anos")
 
-sessao1 = Sessao(filme, "18h", 20.0, 100, 0, [])
-sessao2 = Sessao(filme, "21h", 25.0, 50, 0, [])
+sessao1 = Sessao(filme1, "18h", 20.0, 100, 0, [])
+sessao2 = Sessao(filme1, "21h", 25.0, 50, 0, [])
 
 cliente1 = Cliente("João", "123.456.789-00", "(11) 99999-9999",
                    50.0, "1111 2222 3333 4444", 25)
