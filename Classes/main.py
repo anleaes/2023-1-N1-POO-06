@@ -46,7 +46,7 @@ def selecionar_sessao(sessoes: List[Sessao]) -> Sessao:
             print("Opção inválida ou sessão sem ingressos disponíveis.")
 
 
-def comprar_ingressos(sessao: Sessao, cliente: Cliente) -> None:
+def comprar_ingressos(sessao: Sessao, cliente: Cliente):
     while True:
         qtd_ingressos = input("Quantos ingressos deseja comprar? ")
         if qtd_ingressos.isdigit() and int(qtd_ingressos) > 0:
@@ -56,7 +56,7 @@ def comprar_ingressos(sessao: Sessao, cliente: Cliente) -> None:
     cliente.comprar_ingresso(sessao, int(qtd_ingressos))
 
 
-def adicionar_saldo(cliente: Cliente) -> None:
+def adicionar_saldo(cliente: Cliente):
     while True:
         saldo = input("Digite o valor que deseja adicionar ao seu saldo: R$")
         if saldo.replace(".", "", 1).isdigit() and float(saldo) >= 0:
