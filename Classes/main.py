@@ -27,7 +27,7 @@ clientes = [
 ]
 
 
-def listar_sessoes(sessoes: List[Sessao]) -> None:
+def listar_sessoes(sessoes: List[Sessao]):
     print("Sessões disponíveis:")
     for i, sessao in enumerate(sessoes):
         print(f"{i+1}. {sessao.filme.nome} - Horário: {sessao.horario} - Preço: R${sessao.preco:.2f} - Ingressos disponíveis: {sessao.ingressos_disponiveis}")
