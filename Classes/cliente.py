@@ -7,7 +7,7 @@ class Cliente:
         self.cartao_credito = cartao_credito
         self.idade = idade
 
-    def depositar_saldo(self, valor: float):
+    def adicionar_saldo(self, valor: float):
         self.saldo += valor
 
     def comprar_ingresso(self, sessao, qtd_ingressos):
@@ -17,6 +17,7 @@ class Cliente:
         elif qtd_ingressos > sessao.ingressos_disponiveis:
             print("Não há ingressos disponíveis suficientes para realizar a compra")
         else:
+            print(f'{qtd_ingressos:.0f} ingressos adquiridos com sucesso')
             sessao.vender_ingressos(qtd_ingressos)
             self.saldo -= valor_total
             sessao.adicionar_cliente(self)
