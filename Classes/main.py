@@ -66,15 +66,15 @@ def adicionar_saldo(cliente: Cliente) -> None:
             print("Valor inválido. Digite um número positivo.")
 
 
-def ver_sessoes(sessoes: List[Sessao]) -> None:
+def ver_sessoes(sessoes: List[Sessao]):
     listar_sessoes(sessoes)
 
 
-def ver_saldo(cliente: Cliente) -> None:
+def ver_saldo(cliente: Cliente):
     print(f"Seu saldo atual é de R${cliente.saldo:.2f}")
 
 
-def menu_cliente(cliente: Cliente) -> None:
+def menu_cliente(cliente: Cliente):
     os.system('cls' if os.name == 'nt' else 'clear')
     print(f"Bem-vindo {cliente.nome}!")
     while True:
@@ -83,7 +83,7 @@ def menu_cliente(cliente: Cliente) -> None:
         print("2. Ver sessões")
         print("3. Comprar ingressos")
         print("4. Adicionar saldo")
-        print("5. Fazer logout e retornar ao menu anterior")
+        print("5. Deslogar e retornar ao menu anterior")
 
         opcao = input("Digite a opção desejada: ")
 
@@ -130,6 +130,7 @@ while True:
 
     elif opcao == "2":
         print("Obrigado por utilizar nosso sistema de venda de ingressos. Volte sempre!")
+        os.system('cls' if os.name == 'nt' else 'clear')
         break
 
     else:
