@@ -1,3 +1,5 @@
+@startuml N1
+
 class Cliente {
     -nome: str
     -cpf: str
@@ -17,3 +19,20 @@ class Filme {
     -classificacao: str
     +construtor(nome, duracao, genero, classificacao)
 }
+
+class Sessao {
+    -filme: Filme
+    -horario: str
+    -preco: float
+    -ingressos_disponiveis: int
+    -ingressos_vendidos: int
+    -clientes: list[Cliente]
+    ++construtor(filme: Filme, horario, preco, ingressos_disponiveis, ingressos_vendidos, clientes)
+    +vender_ingressos(qtd)
+    +adicionar_cliente(cliente)
+}
+
+Cliente --> Sessao
+Sessao --> Filme
+
+@enduml
