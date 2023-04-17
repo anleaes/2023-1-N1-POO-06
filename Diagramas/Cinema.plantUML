@@ -9,3 +9,11 @@ class Cliente {
     +comprar_ingresso(sessao: Sessao, qtd_ingressos)
     +construtor(nome, cpf, telefone, saldo, cartao_credito, idade)
 }
+
+class Filme {
+    -nome: str
+    -duracao: str
+    -genero: str
+    -classificacao: str
+    +construtor(nome, duracao, genero, classificacao)
+}
