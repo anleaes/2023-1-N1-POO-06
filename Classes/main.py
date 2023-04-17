@@ -28,10 +28,11 @@ clientes = [
 
 
 def listar_sessoes(sessoes: List[Sessao]):
-    print("Sessões disponíveis:")
+    print("              ********* Sessões disponíveis *********")
     for i, sessao in enumerate(sessoes):
         print(f"{i+1}. {sessao.filme.nome} - Horário: {sessao.horario} - Preço: R${sessao.preco:.2f} - Ingressos disponíveis: {sessao.ingressos_disponiveis}")
-
+        
+    print("\n")
 
 def selecionar_sessao(sessoes: List[Sessao]) -> Sessao:
     listar_sessoes(sessoes)
@@ -73,21 +74,25 @@ def ver_sessoes(sessoes: List[Sessao]):
 
 def ver_saldo(cliente: Cliente):
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(f"Seu saldo atual é de R${cliente.saldo:.2f}")
+    print(f"********** CARTEIRA $$ **********")
+    print(f"* Seu saldo atual é de R${cliente.saldo:.2f} *")
+    print(f"*********************************")
 
 
 def menu_cliente(cliente: Cliente):
     os.system('cls' if os.name == 'nt' else 'clear')
     print(f"Bem-vindo {cliente.nome}!")
     while True:
-        print("\n***** MENU CLIENTE *****")
-        print("1. Ver saldo")
-        print("2. Ver sessões")
-        print("3. Comprar ingressos")
-        print("4. Adicionar saldo")
-        print("5. Deslogar e retornar ao menu anterior")
+        print("\n************** MENU CLIENTE ***************")
+        print("* 1. Ver saldo                            *")
+        print("* 2. Ver sessões                          *")
+        print("* 3. Comprar ingressos                    *")
+        print("* 4. Adicionar saldo                      *")
+        print("* 5. Deslogar e retornar ao menu anterior *")
+        print("*******************************************")
 
         opcao = input("Digite a opção desejada: ")
+        print("\n")
 
         if opcao == "1":
             ver_saldo(cliente)
@@ -113,11 +118,12 @@ def menu_cliente(cliente: Cliente):
 
 while True:
     print("\n***** CINEMA *****")
-    print("1. Login")
-    print("2. Sair")
-
+    print("*    1. Login    *")
+    print("*    2. Sair     *")
+    print("******************")
+    print("\n")
     opcao = input("Digite a opção desejada: ")
-
+    print("\n")
     if opcao == "1":
         nome_cliente = input("Digite o nome do cliente: ")
         cliente_encontrado = False

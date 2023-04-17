@@ -27,11 +27,12 @@ class Sessao {
     -ingressos_disponiveis: int
     -ingressos_vendidos: int
     -clientes: list[Cliente]
+    + __init__(filme: Filme, horario: str, preco: float, ingressos_disponiveis: int, ingressos_vendidos: int, clientes: list[Cliente])
     +vender_ingressos(qtd: int): None
     +adicionar_cliente(cliente: Cliente): None
 }
 
-Sessao *-- Filme
-Sessao o-- Cliente
+Cliente --> Sessao
+Sessao --> Filme
 
 @enduml
