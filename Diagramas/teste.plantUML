@@ -7,9 +7,9 @@ class Cliente {
     -saldo: float
     -cartao_credito: str
     -idade: int
-    +depositar_saldo(valor: float): None
-    +comprar_ingresso(sessao: Sessao, qtd_ingressos: int): None
-    +construtor(nome: str, cpf: str, telefone: str, saldo: float, cartao_credito: str, idade: int): None
+    +depositar_saldo(valor)
+    +comprar_ingresso(sessao: Sessao, qtd_ingressos)
+    +construtor(nome, cpf, telefone, saldo, cartao_credito, idade)
 }
 
 class Filme {
@@ -17,7 +17,7 @@ class Filme {
     -duracao: str
     -genero: str
     -classificacao: str
-    +construtor(nome: str, duracao: str, genero: str, classificacao: str): None
+    +construtor(nome, duracao, genero, classificacao)
 }
 
 class Sessao {
@@ -27,9 +27,9 @@ class Sessao {
     -ingressos_disponiveis: int
     -ingressos_vendidos: int
     -clientes: list[Cliente]
-    ++construtor(filme: Filme, horario: str, preco: float, ingressos_disponiveis: int, ingressos_vendidos: int, clientes: list[Cliente])
-    +vender_ingressos(qtd: int): None
-    +adicionar_cliente(cliente: Cliente): None
+    ++construtor(filme: Filme, horario, preco, ingressos_disponiveis, ingressos_vendidos, clientes)
+    +vender_ingressos(qtd)
+    +adicionar_cliente(cliente)
 }
 
 Cliente --> Sessao
