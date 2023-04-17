@@ -1,4 +1,3 @@
-<<<<<<< HEAD:Diagramas/teste.plantUML
 @startuml N123
 
 class Cliente {
@@ -37,43 +36,3 @@ Cliente --> Sessao
 Sessao --> Filme
 
 @enduml
-=======
-@startuml N1
-
-class Cliente {
-    -nome: str
-    -cpf: str
-    -telefone: str
-    -saldo: float
-    -cartao_credito: str
-    -idade: int
-    +depositar_saldo(valor: float): None
-    +comprar_ingresso(sessao: Sessao, qtd_ingressos: int): None
-    +construtor(nome: str, cpf: str, telefone: str, saldo: float, cartao_credito: str, idade: int): None
-}
-
-class Filme {
-    -nome: str
-    -duracao: str
-    -genero: str
-    -classificacao: str
-    +construtor(nome: str, duracao: str, genero: str, classificacao: str): None
-}
-
-class Sessao {
-    -filme: Filme
-    -horario: str
-    -preco: float
-    -ingressos_disponiveis: int
-    -ingressos_vendidos: int
-    -clientes: list[Cliente]
-    ++construtor(filme: Filme, horario: str, preco: float, ingressos_disponiveis: int, ingressos_vendidos: int, clientes: list[Cliente])
-    +vender_ingressos(qtd: int): None
-    +adicionar_cliente(cliente: Cliente): None
-}
-
-Cliente --> Sessao
-Sessao --> Filme
-
-@enduml
->>>>>>> ddbf130dcc001a32c6ea133ef0943617af997838:Diagramas/cinema_dos_guri.plantUML
