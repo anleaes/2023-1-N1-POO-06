@@ -31,8 +31,9 @@ def listar_sessoes(sessoes: List[Sessao]):
     print("              ********* Sessões disponíveis *********")
     for i, sessao in enumerate(sessoes):
         print(f"{i+1}. {sessao.filme.nome} - Horário: {sessao.horario} - Preço: R${sessao.preco:.2f} - Ingressos disponíveis: {sessao.ingressos_disponiveis}")
-        
+
     print("\n")
+
 
 def selecionar_sessao(sessoes: List[Sessao]) -> Sessao:
     listar_sessoes(sessoes)
@@ -60,6 +61,7 @@ def comprar_ingressos(sessao: Sessao, cliente: Cliente):
 def adicionar_saldo(cliente: Cliente):
     while True:
         saldo = input("Digite o valor que deseja adicionar ao seu saldo: R$")
+        os.system('cls' if os.name == 'nt' else 'clear')
         if saldo.replace(".", "", 1).isdigit() and float(saldo) >= 0:
             cliente.adicionar_saldo(float(saldo))
             break
@@ -83,6 +85,7 @@ def menu_cliente(cliente: Cliente):
     os.system('cls' if os.name == 'nt' else 'clear')
     print(f"Bem-vindo {cliente.nome}!")
     while True:
+
         print("\n************** MENU CLIENTE ***************")
         print("* 1. Ver saldo                            *")
         print("* 2. Ver sessões                          *")
@@ -122,7 +125,9 @@ while True:
     print("*    2. Sair     *")
     print("******************")
     print("\n")
+
     opcao = input("Digite a opção desejada: ")
+
     print("\n")
     if opcao == "1":
         nome_cliente = input("Digite o nome do cliente: ")
