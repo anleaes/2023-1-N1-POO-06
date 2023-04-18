@@ -67,3 +67,71 @@ def adicionar_saldo(cliente: Cliente):
             break
         else:
             print("Valor inválido. Digite um número positivo.")
+
+def menu_cliente(cliente: Cliente):
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(f"Bem-vindo {cliente.nome}!")
+    while True:
+
+        print("\n************** MENU CLIENTE ***************")
+        print("* 1. Ver saldo                            *")
+        print("* 2. Ver sessões                          *")
+        print("* 3. Comprar ingressos                    *")
+        print("* 4. Adicionar saldo                      *")
+        print("* 5. Deslogar e retornar ao menu anterior *")
+        print("*******************************************")
+
+        opcao = input("Digite a opção desejada: ")
+        print("\n")
+
+        if opcao == "1":
+            ver_saldo(cliente)
+
+        elif opcao == "2":
+            ver_sessoes(sessoes)
+
+        elif opcao == "3":
+            sessao_selecionada = selecionar_sessao(sessoes)
+            comprar_ingressos(sessao_selecionada, cliente)
+
+        elif opcao == "4":
+            adicionar_saldo(cliente)
+
+        elif opcao == "5":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print("Deslogando")
+            break
+
+        else:
+            print("Opção inválida.")
+
+
+while True:
+    print("\n***** CINEMA *****")
+    print("*    1. Login    *")
+    print("*    2. Sair     *")
+    print("******************")
+    print("\n")
+
+    opcao = input("Digite a opção desejada: ")
+
+    print("\n")
+    if opcao == "1":
+        nome_cliente = input("Digite o nome do cliente: ")
+        cliente_encontrado = False
+
+        for cliente in clientes:
+            if cliente.nome == nome_cliente:
+                menu_cliente(cliente)
+                cliente_encontrado = True
+
+        if not cliente_encontrado:
+            print("Cliente não encontrado.")
+
+    elif opcao == "2":
+        print("Obrigado por utilizar nosso sistema de venda de ingressos. Volte sempre!")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        break
+
+    else:
+        print("Opção inválida.")
