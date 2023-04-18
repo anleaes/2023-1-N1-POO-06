@@ -25,3 +25,45 @@ clientes = [
     Cliente("Roberta", "432.632.734-42", "(51) 98644-5732",
             60.00, "7384 6127 8743 6532", 23)
 ]
+
+
+def listar_sessoes(sessoes: List[Sessao]):
+    print("              ********* Sessões disponíveis *********")
+    for i, sessao in enumerate(sessoes):
+        print(f"{i+1}. {sessao.filme.nome} - Horário: {sessao.horario} - Preço: R${sessao.preco:.2f} - Ingressos disponíveis: {sessao.ingressos_disponiveis}")
+
+    print("\n")
+
+
+def selecionar_sessao(sessoes: List[Sessao]) -> Sessao:
+    listar_sessoes(sessoes)
+    while True:
+        try:
+            sessao_opcao = int(input("Selecione a sessão desejada: "))
+            if 1 <= sessao_opcao <= len(sessoes) and sessoes[sessao_opcao-1].ingressos_disponiveis > 0:
+                return sessoes[sessao_opcao - 1]
+            else:
+                raise ValueError
+        except (ValueError, IndexError):
+            print("Opção inválida ou sessão sem ingressos disponíveis.")
+
+
+def comprar_ingressos(sessao: Sessao, cliente: Cliente):
+    while True:
+        qtd_ingressos = input("Quantos ingressos deseja comprar? ")
+        if qtd_ingressos.isdigit() and int(qtd_ingressos) > 0:
+            break
+        else:
+            print("Valor inválido. Digite um número inteiro positivo.")
+    cliente.comprar_ingresso(sessao, int(qtd_ingressos))
+
+
+def adicionar_saldo(cliente: Cliente):
+    while True:
+        saldo = input("Digite o valor que deseja adicionar ao seu saldo: R$")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        if saldo.replace(".", "", 1).isdigit() and float(saldo) >= 0:
+            cliente.adicionar_saldo(float(saldo))
+            break
+        else:
+            print("Valor inválido. Digite um número positivo.")
