@@ -67,7 +67,8 @@ def adicionar_saldo(cliente: Cliente):
             break
         else:
             print("Valor inválido. Digite um número positivo.")
-            
+
+
 def ver_sessoes(sessoes: List[Sessao]):
     os.system('cls' if os.name == 'nt' else 'clear')
     listar_sessoes(sessoes)
@@ -77,7 +78,8 @@ def ver_saldo(cliente: Cliente):
     os.system('cls' if os.name == 'nt' else 'clear')
     print(f"********** CARTEIRA $$ **********")
     print(f"* Seu saldo atual é de R${cliente.saldo:.2f} *")
-    print(f"*********************************")            
+    print(f"*********************************")
+
 
 def menu_cliente(cliente: Cliente):
     os.system('cls' if os.name == 'nt' else 'clear')
